@@ -56,4 +56,3 @@ Combina un diseño inspirado en **interfaces futuristas (cyberpunk/neón)** con 
 - **CSS3 + TailwindCSS** → estilos modernos y responsive.  
 - **JavaScript (ES6+)** → lógica dinámica e interactividad.  
 - **Particles.js** → efectos visuales con partículas animadas.  
-└─ docs/                 # Screenshots / capturas del portafolio
