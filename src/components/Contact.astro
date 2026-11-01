@@ -1,83 +1,25 @@
 ---
-import { contactLinks, contactOffers } from "../data/contact";
+import { contactLinks } from "../data/contact";
 import { site } from "../data/site";
 ---
 
-<section id="contact">
-  <h2 class="section-title">Let's Work Together!</h2>
-  <div class="contact-container">
-    <div class="contact-form">
-      <h3 class="contact-heading">Let's Talk on WhatsApp!</h3>
-      <div class="contact-lead">
-        <p>
-          Have a project in mind? Need web development? Contact me directly on WhatsApp and let's discuss your idea!
-        </p>
-        <a href={contactLinks.whatsapp} target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-          <i class="fab fa-whatsapp"></i>
-          Send WhatsApp Message
-        </a>
-        <p class="contact-note">
-          <i class="fas fa-clock"></i>
-          Quick response guaranteed
-        </p>
-      </div>
-      <div class="offer-box">
-        <h4>
-          <i class="fas fa-lightbulb"></i>
-          What can I do for you?
-        </h4>
-        <ul class="offer-list">
-          {
-            contactOffers.map((offer) => (
-              <li>
-                <i class="fas fa-check" />
-                {offer}
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </div>
-
-    <div class="contact-info">
-      <div class="contact-item">
-        <i class="fas fa-envelope contact-icon"></i>
-        <h3>Email</h3>
-        <a href={contactLinks.email}>{site.email}</a>
-        <p class="contact-meta">Response within 24 hours</p>
-      </div>
-      <div class="contact-item">
-        <i class="fab fa-linkedin contact-icon"></i>
-        <h3>LinkedIn</h3>
-        <a href={site.linkedin} target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
-        <div class="social-links">
-          <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="social-link">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <i class="fab fa-github contact-icon"></i>
-        <h3>GitHub</h3>
-        <a href={site.github} target="_blank" rel="noopener noreferrer">View Repositories</a>
-        <div class="social-links">
-          <a href={site.github} target="_blank" rel="noopener noreferrer" class="social-link">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-clock contact-icon"></i>
-        <h3>Availability</h3>
-        <p class="availability-status">
-          <i class="fas fa-check-circle"></i>
-          Available for projects
-        </p>
-        <p class="contact-meta">
-          Mode: Remote or Hybrid<br />
-          Schedule: Flexible
-        </p>
-      </div>
-    </div>
+<section id="contact" class="close">
+  <h2 class="section-title">Let's Work Together</h2>
+  <p class="skills-lead">WhatsApp or email. I usually reply the same day.</p>
+  <div class="close-actions">
+    <a href={contactLinks.whatsapp} target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+      <i class="fab fa-whatsapp"></i>
+      WhatsApp
+    </a>
+    <a href={contactLinks.email} class="cta-button cta-secondary">
+      <i class="fas fa-envelope"></i>
+      Email
+    </a>
+  </div>
+  <div class="close-links">
+    <a href={contactLinks.email}>{site.email}</a>
+    <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+    <span>{site.location} · Remote or hybrid</span>
   </div>
 </section>

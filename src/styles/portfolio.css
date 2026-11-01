@@ -111,6 +111,7 @@ body {
 [data-theme="light"] .category-card h3,
 [data-theme="light"] .project-card h3,
 [data-theme="light"] .contact-item h3,
+[data-theme="light"] .role-title,
 [data-theme="light"] .timeline-title {
     text-shadow: 0 0 16px color-mix(in srgb, currentColor 35%, transparent);
 }
@@ -639,6 +640,222 @@ section {
     color: var(--text-secondary);
     font-size: 1.05rem;
     line-height: 1.6;
+}
+
+.roles {
+    position: relative;
+    max-width: 920px;
+    margin: 0.5rem auto 0;
+}
+
+.roles::before {
+    content: '';
+    position: absolute;
+    top: 0.55rem;
+    bottom: 1.4rem;
+    left: calc(132px + 2rem);
+    width: 1px;
+    background: linear-gradient(to bottom, var(--primary-cyan), var(--primary-pink), transparent);
+}
+
+.role {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 0 2rem;
+    padding-bottom: 2.4rem;
+}
+
+.role:last-child {
+    padding-bottom: 0;
+}
+
+.role-when {
+    margin: 0.2rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--primary-green);
+}
+
+.role-when span:last-child {
+    color: var(--text-secondary);
+}
+
+.role-body {
+    position: relative;
+    min-width: 0;
+    padding-left: 0.95rem;
+}
+
+.role-body::before {
+    content: '';
+    position: absolute;
+    left: -4.5px;
+    top: 0.55rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--primary-cyan);
+    box-shadow: 0 0 12px var(--primary-cyan);
+}
+
+.role:not(:last-child) .role-body {
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.16);
+}
+
+.role-title {
+    margin: 0;
+    font-size: 1.35rem;
+    color: var(--primary-cyan);
+    text-shadow: 0 0 12px color-mix(in srgb, var(--primary-cyan) 45%, transparent);
+}
+
+.role-company {
+    margin: 0.3rem 0 0;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.role-place {
+    margin: 0.25rem 0 0.95rem;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+}
+
+.role-points {
+    margin: 0 0 1rem;
+    padding-left: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.role-points li {
+    margin-bottom: 0.45rem;
+    line-height: 1.55;
+}
+
+.role-points strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.close {
+    text-align: center;
+}
+
+.close-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: -0.5rem;
+}
+
+.close-actions .whatsapp-btn,
+.close-actions .cta-button {
+    padding: 0.95rem 1.7rem;
+    font-size: 1rem;
+    gap: 0.55rem;
+}
+
+.close-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: 1.6rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.close-links a {
+    color: var(--primary-cyan);
+    text-decoration: none;
+}
+
+.close-links a:hover {
+    text-shadow: 0 0 10px var(--primary-cyan);
+}
+
+.footer.footer-slim {
+    margin-top: 0;
+    padding: 1.5rem 0 1.25rem;
+}
+
+.footer-slim-row {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-brand {
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-cyan);
+}
+
+.footer-copy {
+    margin: 1rem 0 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+[data-theme="light"] .role:not(:last-child) .role-body {
+    border-bottom-color: rgba(0, 142, 171, 0.2);
+}
+
+@media (max-width: 768px) {
+    .roles::before {
+        left: 4px;
+    }
+
+    .role {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        padding-left: 1.35rem;
+    }
+
+    .role-when {
+        flex-direction: row;
+        align-items: baseline;
+        gap: 0.45rem;
+    }
+
+    .role-when span:last-child::before {
+        content: '— ';
+    }
+
+    .role-body {
+        padding-left: 0;
+    }
+
+    .role-body::before {
+        left: -1.35rem;
+    }
+
+    .close-actions .cta-button,
+    .close-actions .whatsapp-btn {
+        width: auto;
+    }
+
+    .footer.footer-slim {
+        padding: 1.35rem 0 1.1rem;
+    }
+
+    .footer-slim-row {
+        padding: 0 1rem;
+    }
 }
 
 .skill-groups {

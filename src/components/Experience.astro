@@ -4,23 +4,30 @@ import { experience } from "../data/experience";
 
 <section id="experience">
   <h2 class="section-title">Professional Experience</h2>
-  <div class="timeline">
+  <div class="roles">
     {
-      experience.map((item) => (
-        <div class="timeline-item">
-          <div class="timeline-date">{item.date}</div>
-          <h3 class="timeline-title">{item.title}</h3>
-          <div class="timeline-location">
-            <i class:list={[item.locationIcon, "pin"]} />
-            {item.location}
+      experience.map((role) => (
+        <article class="role">
+          <p class="role-when">
+            <span>{role.start}</span>
+            <span>{role.end}</span>
+          </p>
+          <div class="role-body">
+            <h3 class="role-title">{role.title}</h3>
+            <p class="role-company">{role.company}</p>
+            <p class="role-place">{role.place}</p>
+            <ul class="role-points">
+              {role.highlights.map((point) => (
+                <li set:html={point} />
+              ))}
+            </ul>
+            <div class="timeline-tech">
+              {role.tech.map((tag) => (
+                <span class="tech-tag">{tag}</span>
+              ))}
+            </div>
           </div>
-          <p class="timeline-description" set:html={item.description} />
-          <div class="timeline-tech">
-            {item.tech.map((tag) => (
-              <span class="tech-tag">{tag}</span>
-            ))}
-          </div>
-        </div>
+        </article>
       ))
     }
   </div>

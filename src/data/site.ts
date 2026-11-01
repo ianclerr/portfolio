@@ -23,7 +23,6 @@ export function whatsappLink(message?: string) {
 
 export const whatsappMessages = {
   portfolio: "Hi Ian! I saw your portfolio and I'm interested in discussing a project",
-  footer: "Hi Ian! I saw your portfolio",
   coarco: "Hi Ian! I saw your COARCO project and I'm interested",
 } as const;
 
