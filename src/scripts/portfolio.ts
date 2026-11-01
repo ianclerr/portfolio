@@ -40,7 +40,7 @@ function applyTheme(theme: string) {
 function headerSurface(scrolled: boolean) {
   const light = document.documentElement.getAttribute("data-theme") === "light";
   if (light) {
-    return scrolled ? "rgba(236, 249, 255, 0.96)" : "rgba(243, 251, 255, 0.9)";
+    return scrolled ? "rgba(247, 249, 252, 0.98)" : "rgba(247, 249, 252, 0.96)";
   }
   return scrolled ? "rgba(10, 10, 10, 0.98)" : "rgba(10, 10, 10, 0.95)";
 }
@@ -224,8 +224,8 @@ function updateParticlesTheme(theme: string) {
   const particles = window.pJSDom?.[0]?.pJS.particles;
   if (!particles) return;
 
-  const color = theme === "dark" ? "#00ffff" : "#008eab";
-  const opacity = theme === "dark" ? 0.5 : 0.3;
+  const color = theme === "dark" ? "#00ffff" : "#7aa0b0";
+  const opacity = theme === "dark" ? 0.5 : 0.18;
   particles.color.value = color;
   particles.line_linked.color = color;
   particles.opacity.value = opacity;
