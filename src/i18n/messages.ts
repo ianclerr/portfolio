@@ -65,11 +65,11 @@ interface Ui {
 const en: Ui = {
   metaTitle: "Ian Cler Renaud - Full Stack Developer",
   metaDescription:
-    "Full Stack Developer specialized in comprehensive web development with an end-to-end approach.",
+    "I build invoicing, ERPs, and stores, from the data model to production. Asunción, remote or hybrid.",
   role: "Full Stack Developer",
   heroIntro: 'console.log("Hello World!");',
   heroDescription:
-    "Full Stack Developer specialized in comprehensive web development with an end-to-end approach. I handle the complete cycle from conception to production deployment, ensuring functional and effective systems.",
+    "I build the systems a business runs on: electronic invoicing and SIFEN, multi-company ERPs, and stores that take payments. From Asunción, remote or hybrid, I take each one from the data model to production.",
   letsWork: "Let's Work Together",
   viewProjects: "View Projects",
   skillsTitle: "Technical Skills",
@@ -118,11 +118,11 @@ const en: Ui = {
 const es: Ui & { projects: ProjectText[]; experience: RoleText[] } = {
   metaTitle: "Ian Cler Renaud - Desarrollador Full Stack",
   metaDescription:
-    "Desarrollador Full Stack especializado en desarrollo web integral, de la idea al despliegue.",
+    "Facturación, ERPs y tiendas, del modelo de datos a producción. Asunción, remoto o híbrido.",
   role: "Desarrollador Full Stack",
   heroIntro: 'console.log("Hola mundo!");',
   heroDescription:
-    "Desarrollador Full Stack especializado en desarrollo web integral, de punta a punta. Me ocupo del ciclo completo, desde la idea hasta el despliegue en producción, para dejar sistemas que funcionen.",
+    "Armo los sistemas con los que una empresa opera: facturación electrónica y SIFEN, ERPs multiempresa, y tiendas que cobran. Desde Asunción, remoto o híbrido, los llevo del modelo de datos a producción.",
   letsWork: "Trabajemos juntos",
   viewProjects: "Ver proyectos",
   skillsTitle: "Habilidades técnicas",
