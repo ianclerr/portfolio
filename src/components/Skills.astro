@@ -1,10 +1,13 @@
 ---
-import { needsLightInk, skillGroups, skillIntro } from "../data/skills";
+import { needsLightInk, skillGroups } from "../data/skills";
+import { useI18n } from "../i18n";
+
+const { t } = useI18n(Astro.currentLocale);
 ---
 
 <section id="skills">
-  <h2 class="section-title">Technical Skills</h2>
-  <p class="skills-lead">{skillIntro}</p>
+  <h2 class="section-title">{t.skillsTitle}</h2>
+  <p class="skills-lead">{t.skillIntro}</p>
   <div class="skill-groups">
     {
       skillGroups.map((group) => (

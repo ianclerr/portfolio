@@ -1,5 +1,8 @@
 ---
-import { navLinks, site } from "../data/site";
+import { site } from "../data/site";
+import { useI18n } from "../i18n";
+
+const { locale, t, nav, switchHref } = useI18n(Astro.currentLocale, Astro.url.pathname);
 ---
 
 <header>
@@ -8,7 +11,7 @@ import { navLinks, site } from "../data/site";
       <div class="logo">{site.logo}</div>
       <ul class="nav-links">
         {
-          navLinks.map((link) => (
+          nav.map((link) => (
             <li>
               <a href={link.href}>{link.label}</a>
             </li>
@@ -17,7 +20,10 @@ import { navLinks, site } from "../data/site";
       </ul>
     </div>
     <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" title="Toggle theme" type="button">
+      <a class="lang-toggle" href={switchHref} data-lang-switch aria-label={t.langLabel}>
+        {locale === "en" ? "ES" : "EN"}
+      </a>
+      <button class="theme-toggle" id="themeToggle" title={t.themeLabel} type="button">
         <i class="fas fa-moon" id="themeIcon"></i>
       </button>
       <div class="mobile-menu" id="mobileMenuBtn">

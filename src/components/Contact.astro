@@ -1,27 +1,29 @@
 ---
-import { contactLinks, contactOffers } from "../data/contact";
 import { site } from "../data/site";
+import { useI18n } from "../i18n";
+
+const { t, links } = useI18n(Astro.currentLocale);
 ---
 
 <section id="contact">
-  <h2 class="section-title">Let's Work Together</h2>
+  <h2 class="section-title">{t.contactTitle}</h2>
   <div class="contact-stage">
     <div class="contact-stage-main">
-      <p class="contact-kicker">Available for projects</p>
-      <h3>Have something to build?</h3>
+      <p class="contact-kicker">{t.contactKicker}</p>
+      <h3>{t.contactHeading}</h3>
       <p>
-        I take a product from the first screen to production. Remote or hybrid, from {site.location}.
+        {t.contactBody} {site.location}.
       </p>
-      <a href={contactLinks.whatsapp} target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+      <a href={links.whatsapp} target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
         <i class="fab fa-whatsapp"></i>
-        Send a WhatsApp
+        {t.whatsappCta}
       </a>
     </div>
     <div class="contact-stage-side">
-      <h4>What I can take on</h4>
+      <h4>{t.offersTitle}</h4>
       <ul class="offer-list">
         {
-          contactOffers.map((offer) => (
+          t.offers.map((offer) => (
             <li>
               <i class="fas fa-check" />
               {offer}
@@ -30,7 +32,7 @@ import { site } from "../data/site";
         }
       </ul>
       <div class="contact-lines">
-        <a href={contactLinks.email}>
+        <a href={links.email}>
           <i class="fas fa-envelope"></i>
           {site.email}
         </a>
@@ -44,7 +46,7 @@ import { site } from "../data/site";
         </a>
         <span>
           <i class="fas fa-map-marker-alt"></i>
-          {site.location} · Remote or hybrid
+          {site.location} · {t.remote}
         </span>
       </div>
     </div>

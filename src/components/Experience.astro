@@ -1,12 +1,14 @@
 ---
-import { experience } from "../data/experience";
+import { useI18n } from "../i18n";
+
+const { t, roles } = useI18n(Astro.currentLocale);
 ---
 
 <section id="experience">
-  <h2 class="section-title">Professional Experience</h2>
+  <h2 class="section-title">{t.experienceTitle}</h2>
   <div class="roles">
     {
-      experience.map((role) => (
+      roles.map((role) => (
         <article class="role">
           <p class="role-when">
             <span>{role.start}</span>

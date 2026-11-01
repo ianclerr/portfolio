@@ -1,21 +1,24 @@
 ---
 import { site } from "../data/site";
+import { terminalScript, useI18n } from "../i18n";
+
+const { locale, t } = useI18n(Astro.currentLocale);
 ---
 
 <section id="home" class="hero">
   <div class="hero-content">
-    <p class="intro">{site.heroIntro}</p>
+    <p class="intro">{t.heroIntro}</p>
     <h1>{site.name}</h1>
-    <p class="subtitle">{site.role}</p>
-    <p class="description">{site.heroDescription}</p>
+    <p class="subtitle">{t.role}</p>
+    <p class="description">{t.heroDescription}</p>
     <div class="cta-buttons">
-      <a href="/#contact" class="cta-button">
+      <a href={locale === "es" ? "/es/#contact" : "/#contact"} class="cta-button">
         <i class="fas fa-rocket"></i>
-        Let's Work Together
+        {t.letsWork}
       </a>
-      <a href="/#projects" class="cta-button cta-secondary">
+      <a href={locale === "es" ? "/es/#projects" : "/#projects"} class="cta-button cta-secondary">
         <i class="fas fa-code"></i>
-        View Projects
+        {t.viewProjects}
       </a>
     </div>
   </div>
@@ -26,6 +29,6 @@ import { site } from "../data/site";
       <div class="terminal-dot dot-green"></div>
       <div class="terminal-title">ian@portfolio:~$</div>
     </div>
-    <div class="terminal-body" id="terminal"></div>
+    <div class="terminal-body" id="terminal" data-lines={JSON.stringify(terminalScript(locale))}></div>
   </div>
 </section>

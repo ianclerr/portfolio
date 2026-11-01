@@ -96,18 +96,28 @@ function initParticles() {
 function typeTerminal() {
   const terminal = document.getElementById("terminal");
   if (!terminal) return;
+  let lines = terminalLines;
+  const raw = terminal.dataset.lines;
+  if (raw) {
+    try {
+      const parsed = JSON.parse(raw) as Array<{ text: string; delay: number }>;
+      if (parsed.length > 0) lines = parsed;
+    } catch {
+      lines = terminalLines;
+    }
+  }
   let lineIndex = 0;
 
   const addLine = () => {
-    if (lineIndex >= terminalLines.length) return;
+    if (lineIndex >= lines.length) return;
     const line = document.createElement("div");
     line.className = "terminal-line";
-    line.innerHTML = terminalLines[lineIndex].text;
+    line.innerHTML = lines[lineIndex].text;
     terminal.appendChild(line);
     window.setTimeout(() => {
       line.style.opacity = "1";
     }, 100);
-    const delay = terminalLines[lineIndex].delay;
+    const delay = lines[lineIndex].delay;
     lineIndex += 1;
     window.setTimeout(addLine, delay);
   };
@@ -126,16 +136,38 @@ function initSkillLevels() {
   });
 }
 
+function samePage(path: string) {
+  const normalize = (value: string) => value.replace(/\/$/, "") || "/";
+  return normalize(path) === normalize(window.location.pathname);
+}
+
 function initSmoothScrolling() {
-  document.querySelectorAll<HTMLAnchorElement>('a[href^="#"], a[href^="/#"]').forEach((anchor) => {
+  document.querySelectorAll<HTMLAnchorElement>('a[href*="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (event) => {
       const href = anchor.getAttribute("href") ?? "";
-      const hash = href.startsWith("/#") ? href.slice(1) : href;
-      if (!hash.startsWith("#")) return;
+      if (anchor.hasAttribute("data-lang-switch") || /^https?:/i.test(href)) return;
+      const hashIndex = href.indexOf("#");
+      if (hashIndex < 0) return;
+      const hash = href.slice(hashIndex);
+      const path = hashIndex === 0 ? "" : href.slice(0, hashIndex);
+      if (path && !samePage(path)) return;
       const target = document.querySelector(hash);
       if (!target) return;
       event.preventDefault();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+function initLangSwitch() {
+  document.querySelectorAll<HTMLAnchorElement>("[data-lang-switch]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const hash = window.location.hash;
+      if (!hash) return;
+      event.preventDefault();
+      const url = new URL(link.href, window.location.origin);
+      url.hash = hash;
+      window.location.assign(url.toString());
     });
   });
 }
@@ -307,6 +339,7 @@ export function initPortfolio() {
   typeTerminal();
   initSkillLevels();
   initSmoothScrolling();
+  initLangSwitch();
   animateOnScroll();
   initThemeToggle();
   initMobileMenu();

@@ -1,9 +1,11 @@
 ---
-import { projects } from "../data/projects";
+import { useI18n } from "../i18n";
+
+const { t, projects } = useI18n(Astro.currentLocale);
 ---
 
 <section id="projects">
-  <h2 class="section-title">Featured Projects</h2>
+  <h2 class="section-title">{t.projectsTitle}</h2>
   <div class="projects-grid">
     {
       projects.map((project) => (
@@ -16,7 +18,7 @@ import { projects } from "../data/projects";
                 target={project.links[0].newTab ? "_blank" : undefined}
                 rel={project.links[0].newTab ? "noopener noreferrer" : undefined}
               >
-                <img src={project.preview} alt={`${project.title} website preview`} />
+                <img src={project.preview} alt={`${project.title} ${t.previewAlt}`} />
               </a>
             ) : (
               <i class:list={[project.icon, "project-icon"]} />

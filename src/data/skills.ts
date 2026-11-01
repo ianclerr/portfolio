@@ -37,9 +37,6 @@ export interface SkillGroup {
   items: SkillItem[];
 }
 
-export const skillIntro =
-  "The stack I use to take a product from the first screen to production.";
-
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",

@@ -4,11 +4,13 @@ import Background from "../components/Background.astro";
 import Header from "../components/Header.astro";
 import MobileNav from "../components/MobileNav.astro";
 import Footer from "../components/Footer.astro";
-import { site } from "../data/site";
+import { useI18n } from "../i18n";
 import "../styles/portfolio.css";
+
+const { locale, t } = useI18n(Astro.currentLocale);
 ---
 
-<BaseLayout title={site.title} description={site.description}>
+<BaseLayout title={t.metaTitle} description={t.metaDescription} lang={locale}>
   <Fragment slot="head">
     <script is:inline>
       document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");

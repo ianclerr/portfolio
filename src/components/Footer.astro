@@ -1,6 +1,9 @@
 ---
-import { contactLinks, footerTech } from "../data/contact";
-import { navLinks, site } from "../data/site";
+import { footerTech } from "../data/contact";
+import { site } from "../data/site";
+import { useI18n } from "../i18n";
+
+const { t, nav, links } = useI18n(Astro.currentLocale);
 ---
 
 <footer class="footer">
@@ -8,7 +11,7 @@ import { navLinks, site } from "../data/site";
     <div class="footer-section">
       <div class="footer-logo">
         <h3>{site.logo}</h3>
-        <p>Full Stack Developer specialized in end-to-end development</p>
+        <p>{t.footerBlurb}</p>
       </div>
       <div class="footer-social">
         <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
@@ -17,20 +20,20 @@ import { navLinks, site } from "../data/site";
         <a href={site.github} target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a href={contactLinks.email} class="footer-social-link" aria-label="Email">
+        <a href={links.email} class="footer-social-link" aria-label="Email">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href={contactLinks.whatsappPlain} target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp">
+        <a href={links.whatsappPlain} target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </div>
     </div>
 
     <div class="footer-section">
-      <h4>Navigation</h4>
+      <h4>{t.navigation}</h4>
       <ul class="footer-links">
         {
-          navLinks.map((link) => (
+          nav.map((link) => (
             <li>
               <a href={link.href}>{link.label}</a>
             </li>
@@ -40,20 +43,20 @@ import { navLinks, site } from "../data/site";
     </div>
 
     <div class="footer-section">
-      <h4>Technologies</h4>
+      <h4>{t.technologies}</h4>
       <ul class="footer-links">
         {footerTech.map((item) => <li>{item}</li>)}
       </ul>
     </div>
 
     <div class="footer-section">
-      <h4>Quick Contact</h4>
+      <h4>{t.quickContact}</h4>
       <div class="footer-contact">
         <p><i class="fas fa-envelope"></i> {site.email}</p>
         <p><i class="fas fa-map-marker-alt"></i> {site.location}</p>
-        <p><i class="fas fa-clock"></i> Available for projects</p>
+        <p><i class="fas fa-clock"></i> {t.available}</p>
       </div>
-      <a href={contactLinks.whatsappFooter} target="_blank" rel="noopener noreferrer" class="footer-cta">
+      <a href={links.whatsappFooter} target="_blank" rel="noopener noreferrer" class="footer-cta">
         <i class="fab fa-whatsapp"></i>
         WhatsApp
       </a>
@@ -62,7 +65,7 @@ import { navLinks, site } from "../data/site";
 
   <div class="footer-bottom">
     <div class="footer-bottom-content">
-      <p>&copy; 2026 {site.name}. All rights reserved.</p>
+      <p>&copy; 2026 {site.name}. {t.rights}</p>
     </div>
   </div>
 </footer>

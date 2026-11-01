@@ -20,17 +20,3 @@ export function whatsappLink(message?: string) {
   if (!message) return base;
   return `${base}?text=${encodeURIComponent(message)}`;
 }
-
-export const whatsappMessages = {
-  portfolio: "Hi Ian! I saw your portfolio and I'm interested in discussing a project",
-  footer: "Hi Ian! I saw your portfolio",
-  coarco: "Hi Ian! I saw your COARCO project and I'm interested",
-} as const;
-
-export const navLinks = [
-  { href: "/#home", label: "Home" },
-  { href: "/#skills", label: "Skills" },
-  { href: "/#projects", label: "Projects" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#contact", label: "Contact" },
-] as const;
