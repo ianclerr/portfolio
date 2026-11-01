@@ -1,46 +1,27 @@
 ---
-import { coreSkills, skillGroups, skillIntro } from "../data/skills";
+import { needsLightInk, skillGroups, skillIntro } from "../data/skills";
 ---
 
 <section id="skills">
   <h2 class="section-title">Technical Skills</h2>
-  <div class="skills-layout">
-    <div class="skills-intro">
-      <h3>{skillIntro.title}</h3>
-      <p>{skillIntro.text}</p>
-    </div>
-
-    <div class="skill-icons">
-      {
-        coreSkills.map((skill) => (
-          <div class="skill-chip" style={`--skill: ${skill.color}`}>
-            <i class={skill.icon} aria-hidden="true" />
-            <span>{skill.name}</span>
+  <p class="skills-lead">{skillIntro}</p>
+  <div class="skill-groups">
+    {
+      skillGroups.map((group) => (
+        <div class="skill-group">
+          <h3>{group.title}</h3>
+          <div class="skill-row">
+            {group.items.map((item) => (
+              <div class:list={["skill-logo", needsLightInk(item.icon.hex) && "is-ink"]} style={`--brand: #${item.icon.hex}`}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d={item.icon.path} />
+                </svg>
+                <span>{item.label}</span>
+              </div>
+            ))}
           </div>
-        ))
-      }
-    </div>
-
-    <div class="skill-groups">
-      {
-        skillGroups.map((group) => (
-          <div class="skill-group" style={`--group: ${group.color}`}>
-            <h3>
-              <i class={group.icon} aria-hidden="true" />
-              {group.title}
-            </h3>
-            <p>{group.description}</p>
-            <div class="skill-icons">
-              {group.items.map((skill) => (
-                <div class="skill-chip" style={`--skill: ${skill.color}`}>
-                  <i class={skill.icon} aria-hidden="true" />
-                  <span>{skill.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))
-      }
-    </div>
+        </div>
+      ))
+    }
   </div>
 </section>

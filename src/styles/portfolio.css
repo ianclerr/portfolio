@@ -632,92 +632,75 @@ section {
     margin-bottom: 2rem;
 }
 
-.skills-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
-}
-
-.skills-intro {
+.skills-lead {
     max-width: 640px;
-}
-
-.skill-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7rem;
-}
-
-.skill-chip {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.45rem;
-    width: 96px;
-    min-height: 92px;
-    padding: 0.85rem 0.4rem 0.7rem;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid color-mix(in srgb, var(--skill, var(--primary-cyan)) 50%, transparent);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.skill-chip i {
-    font-size: 1.75rem;
-    color: var(--skill, var(--primary-cyan));
-    filter: drop-shadow(0 0 8px color-mix(in srgb, var(--skill, var(--primary-cyan)) 65%, transparent));
-}
-
-.skill-chip span {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.01em;
+    margin: -1.2rem auto 2.6rem;
     text-align: center;
-    line-height: 1.25;
     color: var(--text-secondary);
-}
-
-.skill-chip:hover {
-    transform: translateY(-4px);
-    border-color: var(--skill, var(--primary-cyan));
-    box-shadow: 0 12px 26px color-mix(in srgb, var(--skill, var(--primary-cyan)) 28%, transparent);
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 .skill-groups {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.8rem 2.4rem;
-}
-
-.skill-group {
-    padding-left: 0.95rem;
-    border-left: 2px solid color-mix(in srgb, var(--group, var(--primary-pink)) 75%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
 }
 
 .skill-group h3 {
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-    margin-bottom: 0.35rem;
-    font-size: 1.05rem;
-    color: var(--group, var(--primary-pink));
-    text-shadow: 0 0 12px color-mix(in srgb, var(--group, var(--primary-pink)) 45%, transparent);
-}
-
-.skill-group h3 i {
-    font-size: 1rem;
-}
-
-.skill-group p {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.95rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
     color: var(--text-secondary);
-    font-size: 0.92rem;
-    line-height: 1.5;
+    text-shadow: none;
 }
 
-[data-theme="light"] .skill-chip {
-    background: rgba(255, 255, 255, 0.7);
+.skill-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.35rem 1.75rem;
+}
+
+.skill-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 88px;
+}
+
+.skill-logo svg {
+    width: 38px;
+    height: 38px;
+    fill: var(--brand);
+    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--brand) 55%, transparent));
+    transition: transform 0.2s ease;
+}
+
+.skill-logo.is-ink svg {
+    fill: #f4f4f5;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25));
+}
+
+[data-theme="light"] .skill-logo.is-ink svg {
+    fill: #161616;
+    filter: none;
+}
+
+.skill-logo span {
+    font-size: 0.72rem;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.skill-logo:hover svg {
+    transform: translateY(-3px) scale(1.08);
 }
 
 .skills-grid {
