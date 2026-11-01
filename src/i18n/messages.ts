@@ -199,10 +199,10 @@ const es: Ui & { projects: ProjectText[]; experience: RoleText[] } = {
       place: "Asunción, Paraguay · Híbrido",
       highlights: [
         "<strong>COARCO ERP</strong>: contabilidad, gestión multiempresa, facturación electrónica y SIFEN.",
-        "<strong>MiFactu</strong>: backend en Laravel, APIs REST, pasarelas de pago y la app en Flutter para profesionales independientes.",
+        "<strong>MiFactu</strong>: backend en Laravel, APIs REST, integración con pasarela de pago y la app en Flutter para profesionales independientes.",
         "Backend, frontend, diseño de base de datos y despliegues a producción, más automatización en Python para XML, envío de documentos y estado en SIFEN.",
       ],
-      tech: ["Laravel", "Flutter", "Python", "REST API", "SIFEN"],
+      tech: ["Laravel", "Flutter", "Python", "REST API", "SIFEN", "Facturación electrónica", "Pasarela de pago"],
     },
     {
       start: "jul 2025",
@@ -211,10 +211,10 @@ const es: Ui & { projects: ProjectText[]; experience: RoleText[] } = {
       place: "Asunción, Paraguay · Híbrido",
       highlights: [
         "Tienda: catálogo, promociones, carrito y una interfaz adaptable.",
-        "APIs de terceros y pasarelas de pago.",
+        "APIs de terceros e integración con pasarela de pago.",
         "ETL que actualizaba el catálogo según las ventas y las reglas del negocio, más despliegues a producción.",
       ],
-      tech: ["React", "Next.js", "TypeScript", "Node.js", "Express"],
+      tech: ["React", "Next.js", "TypeScript", "Node.js", "Express", "E-commerce", "API REST", "ETL", "Pasarela de pago"],
     },
     {
       start: "abr 2025",

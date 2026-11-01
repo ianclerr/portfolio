@@ -17,10 +17,10 @@ export const experience: Role[] = [
     place: "Asunción, Paraguay · Hybrid",
     highlights: [
       "<strong>COARCO ERP</strong>: accounting, multi-company management, electronic invoicing, and SIFEN.",
-      "<strong>MiFactu</strong>: Laravel backend, REST APIs, payment gateways, and the Flutter app for independent professionals.",
+      "<strong>MiFactu</strong>: Laravel backend, REST APIs, payment gateway integration, and the Flutter app for independent professionals.",
       "Backend, frontend, database design, and production deploys, plus Python automation for XML, document submission, and SIFEN status.",
     ],
-    tech: ["Laravel", "Flutter", "Python", "REST API", "SIFEN"],
+    tech: ["Laravel", "Flutter", "Python", "REST API", "SIFEN", "Electronic invoicing", "Payment gateway"],
   },
   {
     start: "Jul 2025",
@@ -30,10 +30,10 @@ export const experience: Role[] = [
     place: "Asunción, Paraguay · Hybrid",
     highlights: [
       "Storefront: product catalog, promotions, shopping cart, and responsive UI.",
-      "Third-party APIs and payment gateways.",
+      "Third-party APIs and payment gateway integration.",
       "ETL that updated the catalog from sales activity and business rules, plus production deploys.",
     ],
-    tech: ["React", "Next.js", "TypeScript", "Node.js", "Express"],
+    tech: ["React", "Next.js", "TypeScript", "Node.js", "Express", "E-commerce", "REST API", "ETL", "Payment gateway"],
   },
   {
     start: "Apr 2025",
