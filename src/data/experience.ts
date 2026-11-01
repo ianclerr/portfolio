@@ -35,13 +35,4 @@ export const experience: ExperienceItem[] = [
       "Built a B2B travel booking portal for travel agencies, consuming and integrating multiple third-party APIs from airlines, hotels, and travel service providers, enabling agents to search real-time availability, quote, and combine flights, transfers, and accommodations into custom dynamic packages.",
     tech: ["Python", "REST API", "B2B"],
   },
-  {
-    date: "2020 - 2025",
-    title: "Skills Development & Personal Projects",
-    location: "Self-taught Training",
-    locationIcon: "fas fa-home",
-    description:
-      "Period of intensive training in web development, completing multiple online courses and building personal projects. Focus on modern technologies such as Laravel, Node.js, JavaScript and database management.",
-    tech: ["Laravel", "JavaScript", "Node.js", "PostgreSQL", "Self-taught"],
-  },
 ];
