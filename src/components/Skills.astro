@@ -1,0 +1,35 @@
+---
+import CategoryCard from "./CategoryCard.astro";
+import { coreSkills, skillCategories, skillIntro } from "../data/skills";
+---
+
+<section id="skills">
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skills-container">
+    <div class="skills-intro">
+      <h3>{skillIntro.title}</h3>
+      <p>{skillIntro.text}</p>
+      <div class="skills-grid">
+        {
+          coreSkills.map((skill) => (
+            <div class="skill-item">
+              <div class="skill-header">
+                <div class="skill-name">
+                  <i class:list={[skill.icon, "skill-icon"]} />
+                  {skill.name}
+                </div>
+                <span class:list={["skill-level", skill.level.toLowerCase()]}>{skill.level}</span>
+              </div>
+              <div class="skill-experience">
+                <span class="experience-badge">{skill.years}</span>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="skill-categories">
+      {skillCategories.map((category) => <CategoryCard {...category} />)}
+    </div>
+  </div>
+</section>

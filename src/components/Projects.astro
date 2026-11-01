@@ -1,0 +1,43 @@
+---
+import { projects } from "../data/projects";
+---
+
+<section id="projects">
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="projects-grid">
+    {
+      projects.map((project) => (
+        <div class="project-card">
+          <div class="project-image">
+            <i class:list={[project.icon, "project-icon"]} />
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>{project.title}</h3>
+              <span class="project-status">{project.status}</span>
+            </div>
+            <p class="project-description">{project.description}</p>
+            <div class="project-tech">
+              {project.tech.map((tag) => (
+                <span class="tech-tag">{tag}</span>
+              ))}
+            </div>
+            <div class="project-links">
+              {project.links.map((link) => (
+                <a
+                  href={link.href}
+                  class="project-link"
+                  target={link.newTab ? "_blank" : undefined}
+                  rel={link.newTab ? "noopener noreferrer" : undefined}
+                >
+                  <i class={link.icon} />
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

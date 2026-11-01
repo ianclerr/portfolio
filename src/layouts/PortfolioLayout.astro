@@ -1,0 +1,29 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Background from "../components/Background.astro";
+import Header from "../components/Header.astro";
+import MobileNav from "../components/MobileNav.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+import "../styles/portfolio.css";
+---
+
+<BaseLayout title={site.title} description={site.description}>
+  <Fragment slot="head">
+    <script is:inline>
+      document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+    </script>
+    <script is:inline src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </Fragment>
+  <Background />
+  <Header />
+  <MobileNav />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <script>
+    import { initPortfolio } from "../scripts/portfolio";
+    initPortfolio();
+  </script>
+</BaseLayout>

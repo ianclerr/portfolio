@@ -1,0 +1,17 @@
+---
+import { floatingTokens } from "../data/decor";
+---
+
+<div id="particles-js"></div>
+<div class="bg-animation"></div>
+
+{
+  floatingTokens.map((item) => (
+    <div
+      class:list={["floating-element", item.className]}
+      style={`font-size: ${item.size}; ${item.position ?? ""}`}
+    >
+      {item.text}
+    </div>
+  ))
+}

@@ -1,0 +1,28 @@
+---
+import { navLinks, site } from "../data/site";
+---
+
+<header>
+  <nav>
+    <div class="nav-left">
+      <div class="logo">{site.logo}</div>
+      <ul class="nav-links">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme" type="button">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+      <div class="mobile-menu" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+</header>

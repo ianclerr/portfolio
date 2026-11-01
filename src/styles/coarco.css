@@ -1,0 +1,68 @@
+.neon-text-cyan {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.neon-text-pink {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.neon-text-green {
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.card-border-cyan,
+.card-border-pink,
+.card-border-green {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.card-border-cyan { border: 1px solid rgba(0, 255, 255, 0.3); }
+.card-border-pink { border: 1px solid rgba(255, 0, 255, 0.3); }
+.card-border-green { border: 1px solid rgba(0, 255, 0, 0.3); }
+
+.tag-cyan {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  color: #00ffff;
+}
+
+.tag-pink {
+  background: rgba(255, 0, 255, 0.1);
+  border: 1px solid rgba(255, 0, 255, 0.4);
+  color: #ff00ff;
+}
+
+.tag-green {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.4);
+  color: #00ff00;
+}
+
+.gradient-line {
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ff00);
+  height: 2px;
+}
+
+.bg-gradient-anim {
+  background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+  background-size: 400% 400%;
+  animation: coarco-gradient 20s ease infinite;
+}
+
+@keyframes coarco-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+.module-card {
+  transition: transform 0.3s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+}

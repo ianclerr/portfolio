@@ -1,0 +1,11 @@
+---
+import CategoryCard from "./CategoryCard.astro";
+import { services } from "../data/services";
+---
+
+<section id="services">
+  <h2 class="section-title">Services</h2>
+  <div class="skill-categories">
+    {services.map((service) => <CategoryCard {...service} />)}
+  </div>
+</section>
