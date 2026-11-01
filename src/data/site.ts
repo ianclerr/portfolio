@@ -4,7 +4,7 @@ export const site = {
   role: "Full Stack Developer",
   title: "Ian Cler Renaud - Full Stack Developer",
   description:
-    "I build invoicing, ERPs, and stores, from the data model to production. Asunción, remote or hybrid.",
+    "Production systems in e-commerce, ERP, electronic invoicing, and B2B. Laravel, Python, Node.js, React, Next.js, and Flutter.",
   email: "clerrenaud.ian@gmail.com",
   phone: "595986769226",
   location: "Asunción, Paraguay",
@@ -12,7 +12,7 @@ export const site = {
   linkedin: "https://linkedin.com/in/ian-cler-renaud-b392322a6",
   heroIntro: 'console.log("Hello World!");',
   heroDescription:
-    "I build the systems a business runs on: electronic invoicing and SIFEN, multi-company ERPs, and stores that take payments. From Asunción, remote or hybrid, I take each one from the data model to production.",
+    "Hands-on experience building production systems in e-commerce, ERP, electronic invoicing, and B2B platforms. I work across the stack — Laravel, Python, Node.js, React, Next.js, and Flutter — focused on backend architecture, third-party API integrations, ETL processes, and production deployments.",
 } as const;
 
 export function whatsappLink(message?: string) {

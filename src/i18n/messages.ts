@@ -65,11 +65,11 @@ interface Ui {
 const en: Ui = {
   metaTitle: "Ian Cler Renaud - Full Stack Developer",
   metaDescription:
-    "I build invoicing, ERPs, and stores, from the data model to production. Asunción, remote or hybrid.",
+    "Production systems in e-commerce, ERP, electronic invoicing, and B2B. Laravel, Python, Node.js, React, Next.js, and Flutter.",
   role: "Full Stack Developer",
   heroIntro: 'console.log("Hello World!");',
   heroDescription:
-    "I build the systems a business runs on: electronic invoicing and SIFEN, multi-company ERPs, and stores that take payments. From Asunción, remote or hybrid, I take each one from the data model to production.",
+    "Hands-on experience building production systems in e-commerce, ERP, electronic invoicing, and B2B platforms. I work across the stack — Laravel, Python, Node.js, React, Next.js, and Flutter — focused on backend architecture, third-party API integrations, ETL processes, and production deployments.",
   letsWork: "Let's Work Together",
   viewProjects: "View Projects",
   skillsTitle: "Technical Skills",
@@ -118,11 +118,11 @@ const en: Ui = {
 const es: Ui & { projects: ProjectText[]; experience: RoleText[] } = {
   metaTitle: "Ian Cler Renaud - Desarrollador Full Stack",
   metaDescription:
-    "Facturación, ERPs y tiendas, del modelo de datos a producción. Asunción, remoto o híbrido.",
+    "Sistemas en producción en e-commerce, ERP, facturación electrónica y B2B. Laravel, Python, Node.js, React, Next.js y Flutter.",
   role: "Desarrollador Full Stack",
   heroIntro: 'console.log("Hola mundo!");',
   heroDescription:
-    "Armo los sistemas con los que una empresa opera: facturación electrónica y SIFEN, ERPs multiempresa, y tiendas que cobran. Desde Asunción, remoto o híbrido, los llevo del modelo de datos a producción.",
+    "Experiencia práctica construyendo sistemas en producción en e-commerce, ERP, facturación electrónica y plataformas B2B. Trabajo todo el stack: Laravel, Python, Node.js, React, Next.js y Flutter, con foco en arquitectura backend, integración de APIs de terceros, procesos ETL y despliegues en producción.",
   letsWork: "Trabajemos juntos",
   viewProjects: "Ver proyectos",
   skillsTitle: "Habilidades técnicas",
