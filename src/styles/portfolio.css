@@ -446,10 +446,10 @@ nav {
 }
 
 [data-theme="light"] .hero-content h1 {
-    background: linear-gradient(45deg, #0a6a82, #9d1db0, #0c7a54);
-    background-size: 300% 300%;
-    background-clip: text;
-    -webkit-background-clip: text;
+    background: none;
+    color: #123044;
+    -webkit-text-fill-color: #123044;
+    animation: slideInLeft 1s ease 0.4s forwards;
 }
 
 .hero-content .subtitle {
