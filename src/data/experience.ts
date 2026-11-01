@@ -33,7 +33,7 @@ export const experience: Role[] = [
       "Third-party APIs and payment gateways.",
       "ETL that updated the catalog from sales activity and business rules, plus production deploys.",
     ],
-    tech: ["E-commerce", "REST API", "ETL", "Payments"],
+    tech: ["React", "Next.js", "TypeScript", "Node.js", "Express"],
   },
   {
     start: "Apr 2025",
@@ -46,6 +46,6 @@ export const experience: Role[] = [
       "APIs from airlines, hotels, and other travel providers.",
       "Live availability, quotes, and packages that combine flights, transfers, and stays.",
     ],
-    tech: ["Python", "REST API", "B2B"],
+    tech: ["Laravel", "Python", "REST API", "PostgreSQL", "B2B"],
   },
 ];

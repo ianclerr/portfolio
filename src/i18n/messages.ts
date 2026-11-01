@@ -214,7 +214,7 @@ const es: Ui & { projects: ProjectText[]; experience: RoleText[] } = {
         "APIs de terceros y pasarelas de pago.",
         "ETL que actualizaba el catálogo según las ventas y las reglas del negocio, más despliegues a producción.",
       ],
-      tech: ["E-commerce", "API REST", "ETL", "Pagos"],
+      tech: ["React", "Next.js", "TypeScript", "Node.js", "Express"],
     },
     {
       start: "abr 2025",
@@ -226,7 +226,7 @@ const es: Ui & { projects: ProjectText[]; experience: RoleText[] } = {
         "APIs de aerolíneas, hoteles y otros proveedores.",
         "Disponibilidad en vivo, cotizaciones y paquetes que combinan vuelos, traslados y estadías.",
       ],
-      tech: ["Python", "REST API", "B2B"],
+      tech: ["Laravel", "Python", "REST API", "PostgreSQL", "B2B"],
     },
   ],
 };
