@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COARCO ERP - Project Details | Ian Cler Renaud</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        fira: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        cyan: { neon: '#00ffff' },
+                        pink: { neon: '#ff00ff' },
+                        green: { neon: '#00ff00' },
+                        yellow: { neon: '#ffff00' },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
+        .neon-text-cyan { color: #00ffff; text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
+        .neon-text-pink { color: #ff00ff; text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff; }
+        .neon-text-green { color: #00ff00; text-shadow: 0 0 10px #00ff00; }
+        .card-border-cyan { border: 1px solid rgba(0,255,255,0.3); background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); }
+        .card-border-pink { border: 1px solid rgba(255,0,255,0.3); background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); }
+        .card-border-green { border: 1px solid rgba(0,255,0,0.3); background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); }
+        .tag-cyan { background: rgba(0,255,255,0.1); border: 1px solid rgba(0,255,255,0.4); color: #00ffff; }
+        .tag-pink { background: rgba(255,0,255,0.1); border: 1px solid rgba(255,0,255,0.4); color: #ff00ff; }
+        .tag-green { background: rgba(0,255,0,0.1); border: 1px solid rgba(0,255,0,0.4); color: #00ff00; }
+        .gradient-line { background: linear-gradient(90deg, #00ffff, #ff00ff, #00ff00); height: 2px; }
+        .bg-gradient-anim {
+            background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e, #0f3460);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+        .module-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gradient-anim min-h-screen">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 border-b border-cyan-400/40" style="background: rgba(10,10,10,0.95); backdrop-filter: blur(20px);">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 text-cyan-400 hover:text-cyan-300 transition-colors">
+                <i class="fas fa-arrow-left"></i>
+                <span class="font-fira font-semibold">Back to Portfolio</span>
+            </a>
+            <span class="font-fira text-cyan-400 text-lg font-bold" style="text-shadow: 0 0 10px #00ffff;">Ian.dev</span>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 pt-28 pb-20">
+
+        <!-- Hero -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 font-fira text-sm tag-green px-4 py-2 rounded-full mb-6">
+                <i class="fas fa-circle text-xs animate-pulse"></i>
+                Confidential Enterprise Project
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 neon-text-cyan font-inter">COARCO</h1>
+            <p class="text-xl text-gray-400 font-fira mb-6">ERP / Business Management & Automation</p>
+            <div class="gradient-line w-32 mx-auto rounded-full mb-8"></div>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+                Enterprise Resource Planning system designed to centralize and automate key business operations,
+                from billing and inventory to workflow automation across multiple departments.
+            </p>
+        </div>
+
+        <!-- Overview Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="card-border-cyan rounded-2xl p-6 text-center">
+                <i class="fas fa-calendar-alt text-3xl neon-text-cyan mb-3 block"></i>
+                <p class="text-gray-400 text-sm mb-1 font-fira">Period</p>
+                <p class="text-white font-semibold">Jan. 2026 - Present</p>
+            </div>
+            <div class="card-border-pink rounded-2xl p-6 text-center">
+                <i class="fas fa-user-tie text-3xl neon-text-pink mb-3 block"></i>
+                <p class="text-gray-400 text-sm mb-1 font-fira">My Role</p>
+                <p class="text-white font-semibold">Full Stack Developer</p>
+            </div>
+            <div class="card-border-green rounded-2xl p-6 text-center">
+                <i class="fas fa-building text-3xl neon-text-green mb-3 block"></i>
+                <p class="text-gray-400 text-sm mb-1 font-fira">Company</p>
+                <p class="text-white font-semibold">AEMPREX</p>
+            </div>
+        </div>
+
+        <!-- What is COARCO -->
+        <section class="card-border-cyan rounded-2xl p-8 mb-10">
+            <h2 class="text-2xl font-bold neon-text-cyan mb-4 flex items-center gap-3">
+                <i class="fas fa-info-circle"></i>
+                What is COARCO?
+            </h2>
+            <div class="gradient-line w-full mb-6 rounded-full"></div>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                COARCO is a comprehensive <strong class="text-white">ERP (Enterprise Resource Planning)</strong> system built
+                to manage and automate the core operations of a business. The platform provides an integrated
+                environment where different departments — administration, operations, finance, and logistics —
+                can work from a single, unified system.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                The system was designed with a <strong class="text-white">modular and scalable architecture</strong>, allowing
+                new business areas to be integrated without disrupting existing functionality. It focuses heavily
+                on reducing manual work through intelligent automation and real-time data management.
+            </p>
+        </section>
+
+        <!-- Modules -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold neon-text-pink mb-2 flex items-center gap-3">
+                <i class="fas fa-cubes"></i>
+                Modules Developed
+            </h2>
+            <div class="gradient-line w-full mb-8 rounded-full"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="card-border-pink rounded-2xl p-6 module-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-file-invoice-dollar text-2xl neon-text-pink"></i>
+                        <h3 class="text-lg font-semibold text-white">Billing Module</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Generation, management and tracking of invoices. Integrated with payment gateways
+                        for automated collection and reconciliation.
+                    </p>
+                </div>
+
+                <div class="card-border-cyan rounded-2xl p-6 module-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-cogs text-2xl neon-text-cyan"></i>
+                        <h3 class="text-lg font-semibold text-white">Process Automation</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Automated repetitive administrative workflows, reducing manual intervention
+                        and significantly cutting down processing times across departments.
+                    </p>
+                </div>
+
+                <div class="card-border-green rounded-2xl p-6 module-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-project-diagram text-2xl neon-text-green"></i>
+                        <h3 class="text-lg font-semibold text-white">System Integrations</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Integration between internal modules and third-party systems via REST APIs,
+                        enabling seamless data flow across the organization.
+                    </p>
+                </div>
+
+                <div class="card-border-pink rounded-2xl p-6 module-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-chart-bar text-2xl neon-text-pink"></i>
+                        <h3 class="text-lg font-semibold text-white">Operational Management</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Dashboard and tools for monitoring and managing day-to-day operations,
+                        providing real-time visibility into business performance.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="card-border-cyan rounded-2xl p-8 mb-10">
+            <h2 class="text-2xl font-bold neon-text-cyan mb-2 flex items-center gap-3">
+                <i class="fas fa-layer-group"></i>
+                Tech Stack
+            </h2>
+            <div class="gradient-line w-full mb-8 rounded-full"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <h3 class="text-sm font-fira neon-text-pink mb-3 uppercase tracking-widest">Backend</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag-pink text-xs px-3 py-1 rounded-full font-fira"><i class="fab fa-laravel mr-1"></i>Laravel</span>
+                        <span class="tag-pink text-xs px-3 py-1 rounded-full font-fira"><i class="fab fa-php mr-1"></i>PHP</span>
+                        <span class="tag-pink text-xs px-3 py-1 rounded-full font-fira"><i class="fas fa-table mr-1"></i>Filament</span>
+                        <span class="tag-pink text-xs px-3 py-1 rounded-full font-fira"><i class="fas fa-plug mr-1"></i>API REST</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-fira neon-text-cyan mb-3 uppercase tracking-widest">Frontend & Mobile</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag-cyan text-xs px-3 py-1 rounded-full font-fira"><i class="fas fa-wind mr-1"></i>Tailwind CSS</span>
+                        <span class="tag-cyan text-xs px-3 py-1 rounded-full font-fira"><i class="fas fa-mobile-alt mr-1"></i>Flutter</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-fira neon-text-green mb-3 uppercase tracking-widest">Infrastructure & DB</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag-green text-xs px-3 py-1 rounded-full font-fira"><i class="fab fa-aws mr-1"></i>AWS</span>
+                        <span class="tag-green text-xs px-3 py-1 rounded-full font-fira"><i class="fab fa-linux mr-1"></i>Linux Servers</span>
+                        <span class="tag-green text-xs px-3 py-1 rounded-full font-fira"><i class="fas fa-database mr-1"></i>PostgreSQL</span>
+                        <span class="tag-green text-xs px-3 py-1 rounded-full font-fira"><i class="fas fa-credit-card mr-1"></i>Payment Gateway</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Contributions -->
+        <section class="card-border-green rounded-2xl p-8 mb-16">
+            <h2 class="text-2xl font-bold neon-text-green mb-2 flex items-center gap-3">
+                <i class="fas fa-user-check"></i>
+                My Contributions
+            </h2>
+            <div class="gradient-line w-full mb-6 rounded-full"></div>
+            <ul class="space-y-4">
+                <li class="flex items-start gap-4">
+                    <i class="fas fa-check-circle neon-text-green mt-1 flex-shrink-0"></i>
+                    <p class="text-gray-300">Development and maintenance of the <strong class="text-white">core billing module</strong>, including invoice generation, payment tracking and reconciliation with integrated payment gateways.</p>
+                </li>
+                <li class="flex items-start gap-4">
+                    <i class="fas fa-check-circle neon-text-green mt-1 flex-shrink-0"></i>
+                    <p class="text-gray-300">Design and implementation of <strong class="text-white">REST APIs</strong> consumed by both the web panel and the Flutter mobile application.</p>
+                </li>
+                <li class="flex items-start gap-4">
+                    <i class="fas fa-check-circle neon-text-green mt-1 flex-shrink-0"></i>
+                    <p class="text-gray-300">Built automated workflows that eliminated repetitive administrative tasks, <strong class="text-white">reducing processing times significantly</strong> across multiple departments.</p>
+                </li>
+                <li class="flex items-start gap-4">
+                    <i class="fas fa-check-circle neon-text-green mt-1 flex-shrink-0"></i>
+                    <p class="text-gray-300">Server configuration and deployment on <strong class="text-white">AWS infrastructure with Linux servers</strong>, ensuring availability and performance in production environments.</p>
+                </li>
+                <li class="flex items-start gap-4">
+                    <i class="fas fa-check-circle neon-text-green mt-1 flex-shrink-0"></i>
+                    <p class="text-gray-300">Built admin panels using <strong class="text-white">Laravel Filament</strong> for internal management and operational oversight.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- CTA -->
+        <div class="text-center">
+            <p class="text-gray-400 mb-6">Interested in working together on a similar project?</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="index.html#contact" class="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-black transition-all hover:-translate-y-1"
+                   style="background: linear-gradient(45deg, #00ffff, #ff00ff); box-shadow: 0 0 20px rgba(0,255,255,0.3);">
+                    <i class="fas fa-rocket"></i>
+                    Let's Work Together
+                </a>
+                <a href="https://wa.me/595986769226?text=Hi%20Ian!%20I%20saw%20your%20COARCO%20project%20and%20I%27m%20interested"
+                   target="_blank"
+                   class="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-white transition-all hover:-translate-y-1"
+                   style="background: linear-gradient(45deg, #25D366, #128C7E); box-shadow: 0 0 20px rgba(37,211,102,0.3);">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-cyan-400/20 mt-10 py-6 text-center text-gray-500 text-sm font-fira">
+        <p>&copy; 2026 Ian Cler Renaud · <span class="neon-text-cyan">Full Stack Developer</span></p>
+    </footer>
+
+</body>
+</html>
