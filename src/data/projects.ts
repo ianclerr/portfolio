@@ -26,7 +26,6 @@ export const projects: Project[] = [
     tech: ["Flutter", "API REST", "Web App", "Mobile", "Real-time"],
     links: [
       { href: "https://mifactu.com.py/", label: "Demo", icon: "fas fa-external-link-alt", newTab: true },
-      { href: "https://github.com/ianclerr", label: "Code", icon: "fab fa-github", newTab: true },
     ],
   },
   {

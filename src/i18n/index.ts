@@ -47,9 +47,9 @@ export function navFor(locale: Locale) {
   const labels = messages[locale].nav;
   return [
     { href: localizePath(locale, "/#home"), label: labels.home },
-    { href: localizePath(locale, "/#skills"), label: labels.skills },
     { href: localizePath(locale, "/#projects"), label: labels.projects },
     { href: localizePath(locale, "/#experience"), label: labels.experience },
+    { href: localizePath(locale, "/#skills"), label: labels.skills },
     { href: localizePath(locale, "/#contact"), label: labels.contact },
   ];
 }
@@ -110,7 +110,7 @@ export function terminalScript(locale: Locale) {
     { text: '<span class="terminal-output">React    Next.js    TypeScript    JavaScript    Laravel</span>', delay: 600 },
     { text: '<span class="terminal-output">MongoDB    PostgreSQL    Node.js    Python    Docker</span>', delay: 800 },
     { text: `${prompt} <span class="terminal-command">cat projects.json</span>`, delay: 1000 },
-    { text: '<span class="terminal-output">{ "dulcesar": "Laravel+PostgreSQL", "ecommerce": "Laravel+Tailwind" }</span>', delay: 900 },
+    { text: '<span class="terminal-output">{ "mifactu": "Laravel+Flutter", "coarco": "ERP", "dulcesar": "Astro+Tailwind" }</span>', delay: 900 },
     { text: `${prompt} <span class="terminal-command">echo "${t.terminalEcho}"</span>`, delay: 1200 },
     { text: `<span class="terminal-output">${t.terminalEchoOut}</span>`, delay: 800 },
     { text: `${prompt} <span class="terminal-cursor">█</span>`, delay: 0 },

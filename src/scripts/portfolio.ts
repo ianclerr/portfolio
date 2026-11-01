@@ -26,7 +26,7 @@ const terminalLines = [
   { text: '<span class="terminal-output">React    Next.js    TypeScript    JavaScript    Laravel</span>', delay: 600 },
   { text: '<span class="terminal-output">MongoDB    PostgreSQL    Node.js    Python    Docker</span>', delay: 800 },
   { text: '<span class="terminal-prompt">ian@portfolio:~$</span> <span class="terminal-command">cat projects.json</span>', delay: 1000 },
-  { text: '<span class="terminal-output">{ "dulcesar": "Laravel+PostgreSQL", "ecommerce": "Laravel+Tailwind" }</span>', delay: 900 },
+  { text: '<span class="terminal-output">{ "mifactu": "Laravel+Flutter", "coarco": "ERP", "dulcesar": "Astro+Tailwind" }</span>', delay: 900 },
   { text: '<span class="terminal-prompt">ian@portfolio:~$</span> <span class="terminal-command">echo "Let\'s build something amazing!"</span>', delay: 1200 },
   { text: '<span class="terminal-output">Let\'s build something amazing!</span>', delay: 800 },
   { text: '<span class="terminal-prompt">ian@portfolio:~$</span> <span class="terminal-cursor">█</span>', delay: 0 },
