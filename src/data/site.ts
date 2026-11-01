@@ -28,9 +28,9 @@ export const whatsappMessages = {
 } as const;
 
 export const navLinks = [
-  { href: "/#home", label: "Home", mobileLabel: "🏠 Home" },
-  { href: "/#skills", label: "Skills", mobileLabel: "⚡ Skills" },
-  { href: "/#projects", label: "Projects", mobileLabel: "🚀 Projects" },
-  { href: "/#experience", label: "Experience", mobileLabel: "💼 Experience" },
-  { href: "/#contact", label: "Contact", mobileLabel: "📞 Contact" },
+  { href: "/#home", label: "Home" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
