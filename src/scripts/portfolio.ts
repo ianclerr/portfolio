@@ -145,7 +145,7 @@ function initSmoothScrolling() {
   document.querySelectorAll<HTMLAnchorElement>('a[href*="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (event) => {
       const href = anchor.getAttribute("href") ?? "";
-      if (anchor.hasAttribute("data-lang-switch") || /^https?:/i.test(href)) return;
+      if (anchor.hasAttribute("data-lang-switch") || anchor.closest("[data-lang-menu]") || /^https?:/i.test(href)) return;
       const hashIndex = href.indexOf("#");
       if (hashIndex < 0) return;
       const hash = href.slice(hashIndex);
@@ -155,19 +155,6 @@ function initSmoothScrolling() {
       if (!target) return;
       event.preventDefault();
       target.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  });
-}
-
-function initLangSwitch() {
-  document.querySelectorAll<HTMLAnchorElement>("[data-lang-switch]").forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const hash = window.location.hash;
-      if (!hash) return;
-      event.preventDefault();
-      const url = new URL(link.href, window.location.origin);
-      url.hash = hash;
-      window.location.assign(url.toString());
     });
   });
 }
@@ -339,7 +326,6 @@ export function initPortfolio() {
   typeTerminal();
   initSkillLevels();
   initSmoothScrolling();
-  initLangSwitch();
   animateOnScroll();
   initThemeToggle();
   initMobileMenu();

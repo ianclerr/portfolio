@@ -17,10 +17,13 @@ export function localizePath(locale: Locale, path: string) {
   return `/es${path}`;
 }
 
+export function barePath(pathname: string) {
+  return pathname.replace(/^\/es(?=\/|$)/, "") || "/";
+}
+
 export function switchPath(pathname: string) {
   const spanish = pathname === "/es" || pathname.startsWith("/es/");
-  const bare = pathname.replace(/^\/es(?=\/|$)/, "") || "/";
-  return localizePath(spanish ? "en" : "es", bare);
+  return localizePath(spanish ? "en" : "es", barePath(pathname));
 }
 
 export function useI18n(current: string | undefined, pathname = "/") {
@@ -35,6 +38,8 @@ export function useI18n(current: string | undefined, pathname = "/") {
     links: linksFor(locale),
     coarco: coarcoFor(locale),
     switchHref: switchPath(pathname),
+    englishHref: localizePath("en", barePath(pathname)),
+    spanishHref: localizePath("es", barePath(pathname)),
   };
 }
 

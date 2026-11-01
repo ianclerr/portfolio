@@ -1,0 +1,155 @@
+---
+import Flag from "./Flag.astro";
+import { useI18n } from "../i18n";
+
+const { locale, englishHref, spanishHref } = useI18n(Astro.currentLocale, Astro.url.pathname);
+const options = [
+  { code: "es" as const, href: spanishHref, label: "Español", region: "España" },
+  { code: "en" as const, href: englishHref, label: "English", region: "United States" },
+];
+---
+
+<div class="lang-menu" data-lang-menu>
+  <button class="lang-toggle" type="button" data-lang-button aria-haspopup="listbox" aria-expanded="false" aria-label={locale === "es" ? "Español" : "English"}>
+    <Flag country={locale === "es" ? "es" : "en"} />
+    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+  </button>
+  <ul class="lang-list" data-lang-list hidden role="listbox">
+    {
+      options.map((option) => (
+        <li>
+          <a href={option.href} data-lang-switch role="option" aria-selected={option.code === locale} hreflang={option.code}>
+            <Flag country={option.code} />
+            <span>
+              <strong>{option.label}</strong>
+              <small>{option.region}</small>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script>
+  function closeLangMenus() {
+    document.querySelectorAll<HTMLElement>("[data-lang-list]").forEach((list) => {
+      list.hidden = true;
+    });
+    document.querySelectorAll<HTMLButtonElement>("[data-lang-button]").forEach((button) => {
+      button.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-lang-menu]").forEach((menu) => {
+    const button = menu.querySelector<HTMLButtonElement>("[data-lang-button]");
+    const list = menu.querySelector<HTMLElement>("[data-lang-list]");
+    if (!button || !list) return;
+
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const willOpen = list.hidden;
+      closeLangMenus();
+      if (willOpen) {
+        list.hidden = false;
+        button.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
+  document.querySelectorAll<HTMLAnchorElement>("[data-lang-switch]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const hash = window.location.hash;
+      if (!hash) return;
+      event.preventDefault();
+      const url = new URL(link.href, window.location.origin);
+      url.hash = hash;
+      window.location.assign(url.toString());
+    });
+  });
+
+  document.addEventListener("click", closeLangMenus);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLangMenus();
+  });
+</script>
+
+<style>
+  .lang-menu {
+    position: relative;
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.28rem;
+    width: 62px;
+    height: 50px;
+    padding: 0;
+    border: 2px solid var(--primary-cyan, #00ffff);
+    border-radius: 50px;
+    background: var(--bg-card, rgba(255, 255, 255, 0.05));
+    color: var(--primary-cyan, #00ffff);
+    cursor: pointer;
+  }
+
+  .lang-toggle:hover,
+  .lang-toggle[aria-expanded="true"] {
+    background: var(--primary-cyan, #00ffff);
+    color: #04131a;
+  }
+
+  .lang-toggle .fa-chevron-down {
+    font-size: 0.6rem;
+  }
+
+  .lang-list {
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    right: 0;
+    z-index: 1100;
+    min-width: 210px;
+    margin: 0;
+    padding: 0.35rem;
+    list-style: none;
+    border: 1px solid rgba(0, 255, 255, 0.28);
+    border-radius: 14px;
+    background: rgba(8, 12, 18, 0.96);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .lang-list a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.7rem;
+    border-radius: 10px;
+    color: #f4f7fb;
+    text-decoration: none;
+  }
+
+  .lang-list a[aria-selected="true"] {
+    background: rgba(0, 255, 255, 0.12);
+  }
+
+  .lang-list a:hover {
+    background: rgba(0, 255, 255, 0.18);
+  }
+
+  .lang-list strong,
+  .lang-list small {
+    display: block;
+  }
+
+  .lang-list strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .lang-list small {
+    color: #b7c5d4;
+    font-size: 0.75rem;
+  }
+
+</style>

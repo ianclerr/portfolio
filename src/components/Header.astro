@@ -1,8 +1,9 @@
 ---
+import LanguageSelect from "./LanguageSelect.astro";
 import { site } from "../data/site";
 import { useI18n } from "../i18n";
 
-const { locale, t, nav, switchHref } = useI18n(Astro.currentLocale, Astro.url.pathname);
+const { t, nav } = useI18n(Astro.currentLocale, Astro.url.pathname);
 ---
 
 <header>
@@ -20,9 +21,7 @@ const { locale, t, nav, switchHref } = useI18n(Astro.currentLocale, Astro.url.pa
       </ul>
     </div>
     <div class="nav-right">
-      <a class="lang-toggle" href={switchHref} data-lang-switch aria-label={t.langLabel}>
-        {locale === "en" ? "ES" : "EN"}
-      </a>
+      <LanguageSelect />
       <button class="theme-toggle" id="themeToggle" title={t.themeLabel} type="button">
         <i class="fas fa-moon" id="themeIcon"></i>
       </button>

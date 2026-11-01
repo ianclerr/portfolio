@@ -1,0 +1,39 @@
+---
+interface Props {
+  country: "es" | "en";
+}
+
+const { country } = Astro.props;
+---
+
+{
+  country === "es" ? (
+    <svg class="flag" viewBox="0 0 24 16" aria-hidden="true">
+      <rect width="24" height="16" fill="#c60b1e" />
+      <rect y="4" width="24" height="8" fill="#ffc400" />
+    </svg>
+  ) : (
+    <svg class="flag" viewBox="0 0 24 16" aria-hidden="true">
+      <rect width="24" height="16" fill="#bf0a30" />
+      <g fill="#fff">
+        <rect y="1.85" width="24" height="1.23" />
+        <rect y="4.92" width="24" height="1.23" />
+        <rect y="8" width="24" height="1.23" />
+        <rect y="11.08" width="24" height="1.23" />
+        <rect y="14.15" width="24" height="1.23" />
+      </g>
+      <rect width="10.4" height="8.6" fill="#002868" />
+    </svg>
+  )
+}
+
+<style>
+  .flag {
+    display: block;
+    width: 22px;
+    height: 15px;
+    flex: none;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  }
+</style>
