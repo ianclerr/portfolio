@@ -5,7 +5,7 @@ import {
   siCss,
   siDocker,
   siExpress,
-  siFlask,
+  siDjango,
   siGit,
   siGooglegemini,
   siHtml5,
@@ -63,7 +63,7 @@ export const skillGroups: SkillGroup[] = [
       { label: "Laravel", icon: siLaravel },
       { label: "PHP", icon: siPhp },
       { label: "Python", icon: siPython },
-      { label: "Flask", icon: siFlask },
+      { label: "Django", icon: siDjango },
     ],
   },
   {

@@ -9,31 +9,31 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    date: "Jan. 2026 - Present",
-    title: "Full Stack Developer - AEMPREX",
-    location: "Asunción, Paraguay · Full-time",
+    date: "Jan. 2026 - Sep. 2026",
+    title: "Software Developer - AEMPREX S.A.",
+    location: "Asunción, Paraguay · Hybrid · Full-time",
     locationIcon: "fas fa-map-marker-alt",
     description:
-      "Full Stack Developer working on the development and maintenance of enterprise-level products. Key contributor to <strong>MiFactu</strong>, an electronic billing platform for freelancers and businesses, and <strong>COARCO</strong>, a modular ERP system for business management and process automation. Responsible for backend architecture, mobile app development, payment gateway integrations, cloud infrastructure on AWS and Linux server management.",
-    tech: ["Laravel", "Filament", "Flutter", "AWS", "Tailwind CSS", "PostgreSQL", "API REST", "Linux Servers", "Payment Gateway"],
+      "Developed and maintained enterprise software at Aemprex, including <strong>COARCO ERP</strong> (accounting, multi-company management, electronic invoicing, and SIFEN integration) and <strong>MiFactu</strong>, an invoicing platform for independent professionals in Paraguay (Laravel backend, REST APIs, payment gateway integrations, and Flutter mobile app). Contributed across backend, frontend, database design, and production deployments, with Python-based automation for XML processing, document submission, and SIFEN status tracking.",
+    tech: ["Laravel", "Flutter", "Python", "REST API", "Payment Gateway", "SIFEN"],
   },
   {
-    date: "Jul. 2025 - Dec. 2025",
-    title: "Full Stack Developer - Central Shop Py",
-    location: "Asunción, Paraguay · On-site · Full-time",
+    date: "Jul. 2025 - Jan. 2026",
+    title: "Full Stack Developer | E-commerce Systems - Central Shop Py",
+    location: "Asunción, Paraguay · Hybrid · Full-time",
     locationIcon: "fas fa-map-marker-alt",
     description:
-      "Complete web development from frontend to backend. Using Node.js and Express.js to create APIs and server logic, working with MySQL and MariaDB databases. Responsible for production deployment and ensuring optimal performance in real environments.",
-    tech: ["Node.js", "Express.js", "MySQL", "MariaDB", "API REST", "Production"],
+      "Handled full-stack development of Central Shop's e-commerce platform, building and maintaining the complete frontend including product catalog, promotions, shopping cart, and responsive UI, integrating third-party APIs and payment gateways, developing ETL processes that automated product catalog operations based on sales activity and time-based business rules, and managing production deployments to ensure platform stability.",
+    tech: ["E-commerce", "REST API", "ETL", "Payment Gateway"],
   },
   {
     date: "Apr. 2025 - Jul. 2025",
-    title: "Full Stack Developer | Automation - DTP Travel Group",
+    title: "Full Stack Developer | B2B Systems - DTP Travel Group",
     location: "Asunción, Paraguay · On-site · Full-time",
     locationIcon: "fas fa-map-marker-alt",
     description:
-      "Full Stack Developer specialized in process automation. Developed systems that optimize repetitive tasks in different tourism sectors, improving operational efficiency and significantly reducing processing times.",
-    tech: ["Laravel", "PHP", "TypeScript", "JavaScript", "Blade", "PostgreSQL", "HTML5", "CSS3"],
+      "Built a B2B travel booking portal for travel agencies, consuming and integrating multiple third-party APIs from airlines, hotels, and travel service providers, enabling agents to search real-time availability, quote, and combine flights, transfers, and accommodations into custom dynamic packages.",
+    tech: ["Python", "REST API", "B2B"],
   },
   {
     date: "2020 - 2025",
