@@ -1,25 +1,56 @@
 ---
-import { contactLinks } from "../data/contact";
+import { contactLinks, contactOffers } from "../data/contact";
 import { site } from "../data/site";
 ---
 
-<section id="contact" class="close">
+<section id="contact">
   <h2 class="section-title">Let's Work Together</h2>
-  <p class="skills-lead">WhatsApp or email. I usually reply the same day.</p>
-  <div class="close-actions">
-    <a href={contactLinks.whatsapp} target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-      <i class="fab fa-whatsapp"></i>
-      WhatsApp
-    </a>
-    <a href={contactLinks.email} class="cta-button cta-secondary">
-      <i class="fas fa-envelope"></i>
-      Email
-    </a>
-  </div>
-  <div class="close-links">
-    <a href={contactLinks.email}>{site.email}</a>
-    <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-    <span>{site.location} · Remote or hybrid</span>
+  <div class="contact-stage">
+    <div class="contact-stage-main">
+      <p class="contact-kicker">Available for projects</p>
+      <h3>Have something to build?</h3>
+      <p>
+        I take a product from the first screen to production. Remote or hybrid, from {site.location}.
+      </p>
+      <a href={contactLinks.whatsapp} target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+        Send a WhatsApp
+      </a>
+      <p class="contact-note">
+        <i class="fas fa-clock"></i>
+        I usually reply the same day.
+      </p>
+    </div>
+    <div class="contact-stage-side">
+      <h4>What I can take on</h4>
+      <ul class="offer-list">
+        {
+          contactOffers.map((offer) => (
+            <li>
+              <i class="fas fa-check" />
+              {offer}
+            </li>
+          ))
+        }
+      </ul>
+      <div class="contact-lines">
+        <a href={contactLinks.email}>
+          <i class="fas fa-envelope"></i>
+          {site.email}
+        </a>
+        <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin-in"></i>
+          LinkedIn
+        </a>
+        <a href={site.github} target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+          GitHub
+        </a>
+        <span>
+          <i class="fas fa-map-marker-alt"></i>
+          {site.location} · Remote or hybrid
+        </span>
+      </div>
+    </div>
   </div>
 </section>
