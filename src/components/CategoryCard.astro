@@ -1,11 +1,14 @@
 ---
-import type { SkillTag } from "../data/skills";
+interface Tag {
+  icon: string;
+  label: string;
+}
 
 interface Props {
   icon: string;
   title: string;
   description: string;
-  tags?: SkillTag[];
+  tags?: Tag[];
 }
 
 const { icon, title, description, tags = [] } = Astro.props;

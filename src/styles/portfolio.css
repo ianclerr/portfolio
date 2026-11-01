@@ -22,16 +22,16 @@
     --transition: all 0.3s ease;
 }
 
-/* Light Theme Variables */
+/* Light theme keeps the neon hues, on a tinted ground instead of flat white. */
 [data-theme="light"] {
-    --bg-dark: #ffffff;
-    --bg-card: rgba(0, 0, 0, 0.08);
-    --text-primary: #2d3748;
-    --text-secondary: #718096;
-    --primary-cyan: #3182ce;
-    --primary-pink: #e53e3e;
-    --primary-green: #38a169;
-    --primary-yellow: #d69e2e;
+    --bg-dark: #f3fbff;
+    --bg-card: rgba(255, 255, 255, 0.78);
+    --text-primary: #122033;
+    --text-secondary: #3e5168;
+    --primary-cyan: #008eab;
+    --primary-pink: #c026d3;
+    --primary-green: #0f9f6e;
+    --primary-yellow: #c48a04;
 }
 
 body {
@@ -68,7 +68,7 @@ body {
 }
 
 [data-theme="light"] .bg-animation {
-    background: linear-gradient(45deg, #ffffff, #f0f0f0, #e8e8e8, #d0d0d0);
+    background: linear-gradient(125deg, #dff6ff, #f6e9ff, #e7fff6, #fff4dc);
 }
 
 @keyframes gradientShift {
@@ -100,33 +100,19 @@ body {
     text-shadow: 0 0 10px var(--primary-yellow), 0 0 20px var(--primary-yellow), 0 0 30px var(--primary-yellow);
 }
 
-/* Remove neon effects in light theme and adjust floating elements */
-[data-theme="light"] .neon-cyan,
-[data-theme="light"] .neon-pink,
-[data-theme="light"] .neon-green,
-[data-theme="light"] .neon-yellow {
-    text-shadow: none;
-}
-
 [data-theme="light"] .floating-element {
-    opacity: 0.05;
-    filter: blur(0.8px);
+    opacity: 0.18;
+    filter: none;
 }
 
-[data-theme="light"] .logo {
-    text-shadow: none;
-}
-
-[data-theme="light"] .section-title {
-    text-shadow: none;
-}
-
+[data-theme="light"] .section-title,
+[data-theme="light"] .logo,
+[data-theme="light"] .skills-intro h3,
 [data-theme="light"] .category-card h3,
 [data-theme="light"] .project-card h3,
 [data-theme="light"] .contact-item h3,
-[data-theme="light"] .timeline-title,
-[data-theme="light"] .skills-intro h3 {
-    text-shadow: none;
+[data-theme="light"] .timeline-title {
+    text-shadow: 0 0 16px color-mix(in srgb, currentColor 35%, transparent);
 }
 
 /* Header */
@@ -144,8 +130,8 @@ header {
 }
 
 [data-theme="light"] header {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(243, 251, 255, 0.88);
+    box-shadow: 0 8px 28px rgba(0, 142, 171, 0.12);
     border-bottom-color: var(--primary-cyan);
 }
 
@@ -644,6 +630,94 @@ section {
     line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: 2rem;
+}
+
+.skills-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.skills-intro {
+    max-width: 640px;
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.skill-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    width: 96px;
+    min-height: 92px;
+    padding: 0.85rem 0.4rem 0.7rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid color-mix(in srgb, var(--skill, var(--primary-cyan)) 50%, transparent);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-chip i {
+    font-size: 1.75rem;
+    color: var(--skill, var(--primary-cyan));
+    filter: drop-shadow(0 0 8px color-mix(in srgb, var(--skill, var(--primary-cyan)) 65%, transparent));
+}
+
+.skill-chip span {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.01em;
+    text-align: center;
+    line-height: 1.25;
+    color: var(--text-secondary);
+}
+
+.skill-chip:hover {
+    transform: translateY(-4px);
+    border-color: var(--skill, var(--primary-cyan));
+    box-shadow: 0 12px 26px color-mix(in srgb, var(--skill, var(--primary-cyan)) 28%, transparent);
+}
+
+.skill-groups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem 2.4rem;
+}
+
+.skill-group {
+    padding-left: 0.95rem;
+    border-left: 2px solid color-mix(in srgb, var(--group, var(--primary-pink)) 75%, transparent);
+}
+
+.skill-group h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.35rem;
+    font-size: 1.05rem;
+    color: var(--group, var(--primary-pink));
+    text-shadow: 0 0 12px color-mix(in srgb, var(--group, var(--primary-pink)) 45%, transparent);
+}
+
+.skill-group h3 i {
+    font-size: 1rem;
+}
+
+.skill-group p {
+    margin-bottom: 0.9rem;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+[data-theme="light"] .skill-chip {
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .skills-grid {
@@ -1291,7 +1365,7 @@ section {
 }
 
 [data-theme="light"] .footer {
-    background: linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(237, 242, 247, 0.95));
+    background: linear-gradient(135deg, rgba(223, 246, 255, 0.96), rgba(246, 233, 255, 0.96));
     border-top-color: var(--primary-cyan);
 }
 
@@ -1312,7 +1386,7 @@ section {
 }
 
 [data-theme="light"] .footer-section h4 {
-    text-shadow: none;
+    text-shadow: 0 0 12px color-mix(in srgb, var(--primary-cyan) 35%, transparent);
 }
 
 .footer-logo h3 {
@@ -1324,7 +1398,7 @@ section {
 }
 
 [data-theme="light"] .footer-logo h3 {
-    text-shadow: none;
+    text-shadow: 0 0 12px color-mix(in srgb, var(--primary-cyan) 35%, transparent);
 }
 
 .footer-logo p {
@@ -1751,13 +1825,18 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .skills-container {
-        text-align: left;
-    }
+            .skills-container,
+            .skills-layout {
+                text-align: left;
+            }
 
-    .skill-categories {
-        text-align: center;
-    }
+            .skill-groups {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-categories {
+                text-align: center;
+            }
 }
 
 @media (max-width: 480px) {

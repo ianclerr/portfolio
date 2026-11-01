@@ -1,92 +1,92 @@
 export interface Skill {
   name: string;
   icon: string;
-  level: string;
-  years: string;
+  color: string;
 }
 
-export interface SkillTag {
-  icon: string;
-  label: string;
-}
-
-export interface SkillCategory {
-  icon: string;
+export interface SkillGroup {
   title: string;
+  icon: string;
+  color: string;
   description: string;
-  tags: SkillTag[];
+  items: Skill[];
 }
 
 export const skillIntro = {
   title: "Full Stack",
-  text: "Mastery of both frontend and backend technologies, with experience in real projects and focus on development best practices. Always learning new technologies.",
+  text: "Interfaces, APIs and the tools around them. The same stack I use to take a product from the first screen to production.",
 };
 
 export const coreSkills: Skill[] = [
-  { name: "JavaScript", icon: "fab fa-js-square", level: "Advanced", years: "2+ years" },
-  { name: "Node.js", icon: "fab fa-node-js", level: "Advanced", years: "1.5+ years" },
-  { name: "PHP/Laravel", icon: "fab fa-php", level: "Advanced", years: "2+ years" },
-  { name: "Python", icon: "fab fa-python", level: "Advanced", years: "1+ year" },
-  { name: "React", icon: "fab fa-react", level: "Advanced", years: "1.5+ years" },
-  { name: "TypeScript", icon: "fas fa-code", level: "Advanced", years: "1+ year" },
-  { name: "Databases", icon: "fas fa-database", level: "Advanced", years: "2+ years" },
-  { name: "AI APIs Integration", icon: "fas fa-brain", level: "Advanced", years: "1+ year" },
-  { name: "API Development", icon: "fas fa-plug", level: "Advanced", years: "2+ years" },
+  { name: "JavaScript", icon: "fab fa-js", color: "#f7df1e" },
+  { name: "TypeScript", icon: "fas fa-code", color: "#3178c6" },
+  { name: "React", icon: "fab fa-react", color: "#61dafb" },
+  { name: "Node.js", icon: "fab fa-node-js", color: "#68a063" },
+  { name: "Laravel", icon: "fab fa-laravel", color: "#ff2d20" },
+  { name: "PHP", icon: "fab fa-php", color: "#8892bf" },
+  { name: "Python", icon: "fab fa-python", color: "#4b8bbe" },
+  { name: "PostgreSQL", icon: "fas fa-database", color: "#336791" },
+  { name: "Docker", icon: "fab fa-docker", color: "#2496ed" },
+  { name: "Astro", icon: "fas fa-rocket", color: "#ff5d01" },
 ];
 
-export const skillCategories: SkillCategory[] = [
+export const skillGroups: SkillGroup[] = [
   {
-    icon: "fas fa-laptop-code",
     title: "Frontend",
-    description: "Modern and responsive interfaces with the latest technologies",
-    tags: [
-      { icon: "fab fa-html5", label: "HTML5" },
-      { icon: "fab fa-css3-alt", label: "CSS3" },
-      { icon: "fab fa-js", label: "JavaScript" },
-      { icon: "fab fa-react", label: "React" },
-      { icon: "fas fa-code", label: "Next.js" },
-      { icon: "fas fa-code", label: "TypeScript" },
-      { icon: "fab fa-bootstrap", label: "Bootstrap" },
-      { icon: "fas fa-wind", label: "Tailwind" },
+    icon: "fas fa-laptop-code",
+    color: "#61dafb",
+    description: "Interfaces that stay fast and clear on any screen.",
+    items: [
+      { name: "HTML5", icon: "fab fa-html5", color: "#e34f26" },
+      { name: "CSS3", icon: "fab fa-css3-alt", color: "#264de4" },
+      { name: "JavaScript", icon: "fab fa-js", color: "#f7df1e" },
+      { name: "React", icon: "fab fa-react", color: "#61dafb" },
+      { name: "Next.js", icon: "fas fa-code", color: "#a3a3a3" },
+      { name: "TypeScript", icon: "fas fa-code", color: "#3178c6" },
+      { name: "Tailwind", icon: "fas fa-wind", color: "#38bdf8" },
+      { name: "Bootstrap", icon: "fab fa-bootstrap", color: "#7952b3" },
     ],
   },
   {
-    icon: "fas fa-server",
     title: "Backend",
-    description: "Robust APIs and scalable architectures",
-    tags: [
-      { icon: "fab fa-node-js", label: "Node.js" },
-      { icon: "fas fa-rocket", label: "Express" },
-      { icon: "fab fa-laravel", label: "Laravel" },
-      { icon: "fab fa-python", label: "Python" },
-      { icon: "fas fa-flask", label: "Flask" },
-      { icon: "fas fa-code", label: "Next.js" },
+    icon: "fas fa-server",
+    color: "#ff2d20",
+    description: "APIs, auth and the data behind the screen.",
+    items: [
+      { name: "Node.js", icon: "fab fa-node-js", color: "#68a063" },
+      { name: "Express", icon: "fas fa-rocket", color: "#9ca3af" },
+      { name: "Laravel", icon: "fab fa-laravel", color: "#ff2d20" },
+      { name: "Python", icon: "fab fa-python", color: "#4b8bbe" },
+      { name: "Flask", icon: "fas fa-flask", color: "#8bc34a" },
+      { name: "REST", icon: "fas fa-plug", color: "#22d3ee" },
     ],
   },
   {
-    icon: "fas fa-tools",
     title: "DevOps & Tools",
-    description: "Deployment and management of production applications",
-    tags: [
-      { icon: "fab fa-docker", label: "Docker" },
-      { icon: "fab fa-git-alt", label: "Git" },
-      { icon: "fas fa-cloud", label: "Cloud" },
-      { icon: "fas fa-database", label: "PostgreSQL" },
-      { icon: "fas fa-leaf", label: "MongoDB" },
-      { icon: "fas fa-cogs", label: "REST API" },
+    icon: "fas fa-tools",
+    color: "#2496ed",
+    description: "Ship it, keep it up, and know what changed.",
+    items: [
+      { name: "Docker", icon: "fab fa-docker", color: "#2496ed" },
+      { name: "Git", icon: "fab fa-git-alt", color: "#f05032" },
+      { name: "Cloud", icon: "fas fa-cloud", color: "#38bdf8" },
+      { name: "PostgreSQL", icon: "fas fa-database", color: "#336791" },
+      { name: "MongoDB", icon: "fas fa-leaf", color: "#47a248" },
+      { name: "Linux", icon: "fab fa-linux", color: "#fcc624" },
     ],
   },
   {
-    icon: "fas fa-brain",
     title: "AI & Integrations",
-    description: "AI API integration and intelligent automation solutions",
-    tags: [
-      { icon: "fas fa-robot", label: "OpenAI GPT" },
-      { icon: "fas fa-brain", label: "Claude AI" },
-      { icon: "fas fa-microchip", label: "Gemini" },
-      { icon: "fas fa-code-branch", label: "LangChain" },
-      { icon: "fas fa-magic", label: "AI Automation" },
-      { icon: "fas fa-comments", label: "Chatbots" },
+    icon: "fas fa-brain",
+    color: "#c084fc",
+    description: "Models wired into real workflows, not demos.",
+    items: [
+      { name: "OpenAI", icon: "fas fa-robot", color: "#10a37f" },
+      { name: "Claude", icon: "fas fa-brain", color: "#d4a574" },
+      { name: "Gemini", icon: "fas fa-microchip", color: "#8ab4f8" },
+      { name: "LangChain", icon: "fas fa-code-branch", color: "#2dd4bf" },
+      { name: "Automation", icon: "fas fa-magic", color: "#f472b6" },
+      { name: "Chatbots", icon: "fas fa-comments", color: "#22d3ee" },
     ],
   },
 ];
