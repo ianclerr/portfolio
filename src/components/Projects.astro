@@ -8,8 +8,19 @@ import { projects } from "../data/projects";
     {
       projects.map((project) => (
         <div class="project-card">
-          <div class="project-image">
-            <i class:list={[project.icon, "project-icon"]} />
+          <div class:list={["project-image", project.preview && "has-preview"]}>
+            {project.preview ? (
+              <a
+                class="project-preview"
+                href={project.links[0].href}
+                target={project.links[0].newTab ? "_blank" : undefined}
+                rel={project.links[0].newTab ? "noopener noreferrer" : undefined}
+              >
+                <img src={project.preview} alt={`${project.title} website preview`} />
+              </a>
+            ) : (
+              <i class:list={[project.icon, "project-icon"]} />
+            )}
           </div>
           <div class="project-content">
             <div class="project-header">
